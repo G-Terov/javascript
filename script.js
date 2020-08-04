@@ -18,6 +18,7 @@ function nextImg(event) {
 document.body.addEventListener("mousedown", nextImg);
 
 function resizeImage() {
-  console.log(bigImage);
+
+    // Работа над масштабированием главного изображения по клику. 
 }
 bigImage.addEventListener("mousedown", resizeImage);
