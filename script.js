@@ -1,3 +1,4 @@
+
 const bigImage = document.getElementById("big-image");
 
 function nextImg(event) {
@@ -17,7 +18,35 @@ function nextImg(event) {
 
 document.body.addEventListener("mousedown", nextImg);
 
+
+// Масштабирование главного изображения по клику.
+
+const img = document.createElement("img");
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const modalClose = document.querySelector(".fa-times");
+
 function resizeImage() {
-  console.log(bigImage);
+
+  img.src = bigImage.src;
+  document.querySelector(".modal-content").appendChild(img);
+
+  modal.classList.add("modal-active");
+  overlay.classList.add("overlay-active");
+
+  // Закрытие модального окна по кнопке
+  modalClose.onclick = function () {
+    
+    modal.classList.remove("modal-active");
+    overlay.classList.remove("overlay-active");
+  };
+
+  // Закрытие модального окна по клику на overlay
+  overlay.addEventListener("click", function(){
+
+    modal.classList.remove("modal-active");
+    overlay.classList.remove("overlay-active");
+  });
 }
+
 bigImage.addEventListener("mousedown", resizeImage);
