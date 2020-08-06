@@ -84,7 +84,7 @@ body {
 }
 
 .modal-content img {
-    width: 90%;
+    width: fit-content;
 }
 
 .min-img-block {
